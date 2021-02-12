@@ -16,7 +16,7 @@ const fileReader = () => {
             let result = data.search('index.js')
             if (result) {
                 console.log("Found index.js in file " + fileName)
-                exit(0)
+                exit(1)
             }
             // console.log(typeof data);
         });
