@@ -13,7 +13,7 @@ const fileReader = () => {
             }
             console.log("Reading File: " + fileName);
             // console.log(data);
-            let result = data.search('index.js')
+            let result = data.search('Felix')
             if (result) {
                 console.log("Found index.js in file " + fileName)
                 exit(1)
@@ -25,4 +25,5 @@ const fileReader = () => {
 
 }
 fileReader();
+// Felix
 
