@@ -1,0 +1,22 @@
+{
+  "name": "file-reader",
+  "version": "1.0.0",
+  "description": "A script for reading files ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixfaisal/attack-on-web.git"
+  },
+  "keywords": [
+    "Security"
+  ],
+  "author": "@felixfaisal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felixfaisal/attack-on-web/issues"
+  },
+  "homepage": "https://github.com/felixfaisal/attack-on-web#readme"
+}
