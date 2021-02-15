@@ -1,6 +1,6 @@
 // const { defaultCipherList } = require('constants');
 const fs = require('fs')
-// import extension from '/extensions.json'
+
 
 const extensionChecker = (fileName) => {
     let rawdata = fs.readFileSync('./src/extensions.json');
