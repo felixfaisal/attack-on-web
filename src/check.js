@@ -1,16 +1,38 @@
 const fs = require('fs');
 const { stdout } = require('process');
 path = require('path');
-let arr = [];
+const arr = require('./files');
 const readline =require('readline')
-function readgit(callback){
-    const readInterface  = readline.createInterface({
-        input: fs.createReadStream('\.gitignore'),
-        output: stdout,
-        console: false
-    });
-    console.log(readInterface)
-}
+
+console.log('arr', arr)
+
+// async function readgit(callback){
+//     const readInterface  = readline.createInterface({
+//         input: fs.createReadStream('\.gitignore'),
+//         // output: stdout,
+//         console: false
+//     });
+// }
+//     readgit((item) => {
+//         item.on('line', async function(line) {
+//             //console.log(line);
+//             arr.push(line);
+//             console.log(arr);
+//         });
+//     })
+    
+
+    // console.log('hello',arr);
+    // console.log('newArr', newArr)
+    // console.log('readInterface', readInterface)
+    // console.log(callback, "callback")
+//}
+
+// readgit((item)=> {
+//  arr.push(item)
+//  console.log('array',readInterface)
+// })
+
 // readgit();
 //     await readInterface.on('line',async (line) =>{
 //        arr.push(line)
@@ -18,10 +40,6 @@ function readgit(callback){
 //     callback(arr)
     
 // }
-readgit((item)=> {
- arr.push(item)
- console.log('array',readInterface)
-})
 
 // fs.readFile('./\.gitignore','utf8',(err,data)=>{
 //     if(err)
