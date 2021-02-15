@@ -1,9 +1,9 @@
-const { defaultCipherList } = require('constants');
+// const { defaultCipherList } = require('constants');
 const fs = require('fs')
 // import extension from '/extensions.json'
 
 const extensionChecker = (fileName) => {
-    let rawdata = fs.readFileSync('extensions.json');
+    let rawdata = fs.readFileSync('./src/extensions.json');
     let exten = JSON.parse(rawdata);
     let result = 0
     for (x in exten.fileExtensions) {
@@ -15,4 +15,5 @@ const extensionChecker = (fileName) => {
     return result
 
 }
-export default extensionChecker;
+module.exports = extensionChecker;
+// export default extensionChecker;
