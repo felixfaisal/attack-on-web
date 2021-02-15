@@ -4,7 +4,36 @@ path = require('path');
 const arr = require('./files');
 const readline =require('readline')
 
-console.log('arr', arr)
+// console.log('arr', arr)
+
+// if(arr.find((item) => item == 'dummy.txt')){
+//     console.log('found')
+// }
+
+
+function crawl(dir){
+    const files = fs.readdirSync(dir);
+    files.forEach(file=> {
+        //console.log(file);
+        if(arr.find((item => file==item)))
+        {
+            console.log('ignore file')
+        }
+        else
+        {
+            const next = path.join(dir,file)
+                if(fs.lstatSync(next).isDirectory()==true) {
+                    crawl(next);
+                }
+                else{
+                    console.log('\t', next);
+                }
+        }
+        
+    })
+}
+
+crawl(__dirname);
 
 // async function readgit(callback){
 //     const readInterface  = readline.createInterface({
