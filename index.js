@@ -12,6 +12,16 @@ function crawl(dir) {
         }
         else {
             if (extensionChecker(next)) {
+                // let rawdata = fs.readFileSync(next);
+                let data = fs.readFileSync(next, 'utf8').toString().split('\n')
+                // console.log(data[0])
+                for (x in data) {
+                    if (data[x].search('arr') > 0) {
+                        console.log(data[x])
+                    }
+                }
+                // console.log(data)
+                // console.log(rawdata);
                 console.log('\t', next);
             }
 
