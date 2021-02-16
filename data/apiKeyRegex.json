@@ -1,0 +1,132 @@
+{
+  "providers": [
+     {
+        "provider":"Artifactory API Token",
+        "pattern":"(?:\\s|=|:|\"|^)AKC[a-zA-Z0-9]{10,}"
+     },
+     {
+        "provider":"AWS Client ID",
+        "pattern":"(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+     },
+     {
+        "provider":"AWS Secret Key",
+        "pattern":"(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]"
+     },
+     {
+        "provider":"Cloudinary Basic Auth",
+        "pattern":"cloudinary:\/\/[0-9]{15}:[0-9A-Za-z]+@[a-z]+"
+     },
+     {
+        "provider":"Facebook Access Token",
+        "pattern":"EAACEdEose0cBA[0-9A-Za-z]+"
+     },
+     {
+        "provider":"Facebook Client ID",
+        "pattern":"(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}"
+     },
+     {
+        "provider":"Facebook Oauth",
+        "pattern":"[f|F][a|A][c|C][e|E][b|B][o|O][o|O][k|K].*['|\"][0-9a-f]{32}['|\"]"
+     },
+     {
+        "provider":"Facebook Secret Key",
+        "pattern":"(?i)(facebook|fb)(.{0,20})?(?-i)['\"][0-9a-f]{32}"
+     },
+     {
+        "provider":"Github",
+        "pattern":"(?i)github(.{0,20})?(?-i)['\"][0-9a-zA-Z]{35,40}"
+     },
+     {
+        "provider":"Google API Key",
+        "pattern":"AIza[0-9A-Za-z\\-_]{35}"
+     },
+     {
+        "provider":"Google Cloud Platform API Key",
+        "pattern":"(?i)(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z\\-_]{35}]['\"]"
+     },
+     {
+        "provider":"Google Drive API Key",
+        "pattern":"AIza[0-9A-Za-z\\-_]{35}"
+     },
+     {
+        "provider":"Google Drive Oauth",
+        "pattern":"[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com"
+     },
+     {
+        "provider":"Google Gmail API Key",
+        "pattern":"AIza[0-9A-Za-z\\-_]{35}"
+     },
+     {
+        "provider":"Google Gmail Oauth",
+        "pattern":"[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com"
+     },
+     {
+        "provider":"Google Oauth Access Token",
+        "pattern":"ya29\\.[0-9A-Za-z\\-_]+"
+     },
+     {
+        "provider":"Google Youtube API Key",
+        "pattern":"AIza[0-9A-Za-z\\-_]{35}"
+     },
+     {
+        "provider":"Google Youtube Oauth",
+        "pattern":"[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com"
+     },
+     {
+        "provider":"Heroku API Key",
+        "pattern":"[h|H][e|E][r|R][o|O][k|K][u|U].{0,30}[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}"
+     },
+     {
+        "provider":"LinkedIn Client ID",
+        "pattern":"(?i)linkedin(.{0,20})?(?-i)['\"][0-9a-z]{12}['\"]"
+     },
+     {
+        "provider":"LinkedIn Secret Key",
+        "pattern":"(?i)linkedin(.{0,20})?['\"][0-9a-z]{16}['\"]"
+     },
+     {
+        "provider":"Mailchamp API Key",
+        "pattern":"[0-9a-f]{32}-us[0-9]{1,2}"
+     },
+     {
+        "provider":"Mailgun API Key",
+        "pattern":"key-[0-9a-zA-Z]{32}"
+     },
+     {
+        "provider":"Slack Token",
+        "pattern":"xox[baprs]-([0-9a-zA-Z]{10,48})?"
+     },
+     {
+        "provider":"Slack Webhook",
+        "pattern":"https://hooks.slack.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}"
+     },
+     {
+        "provider":"Stripe API Key",
+        "pattern":"(?:r|s)k_live_[0-9a-zA-Z]{24}"
+     },
+     {
+        "provider":"Square Access Token",
+        "pattern":"sqOatp-[0-9A-Za-z\\-_]{22}"
+     },
+     {
+        "provider":"Square Oauth Secret",
+        "pattern":"sq0csp-[ 0-9A-Za-z\\-_]{43}"
+     },
+     {
+        "provider":"Twilio API Key",
+        "pattern":"SK[0-9a-fA-F]{32}"
+     },
+     {
+        "provider":"Twitter Client ID",
+        "pattern":"(?i)twitter(.{0,20})?['\"][0-9a-z]{18,25}"
+     },
+     {
+        "provider":"Twitter Oauth",
+        "pattern":"[t|T][w|W][i|I][t|T][t|T][e|E][r|R].{0,30}['\"\\s][0-9a-zA-Z]{35,44}['\"\\s]"
+     },
+     {
+        "provider":"Twitter Secret Key",
+        "pattern":"(?i)twitter(.{0,20})?['\"][0-9a-z]{35,44}"
+     }
+  ]
+}
