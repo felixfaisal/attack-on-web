@@ -10,12 +10,10 @@ function crawl(dir) {
     const files = fs.readdirSync(dir);
     files.forEach(file => {
         //console.log(file);
-        if(arr.find((item => file==item)))
-        {
+        if (arr.find((item => file == item))) {
             console.log('ignore file')
         }
-        else
-        {
+        else {
             const next = path.join(dir, file)
             if (fs.lstatSync(next).isDirectory() == true) {
                 crawl(next);
@@ -28,7 +26,7 @@ function crawl(dir) {
 
             }
         }
-        
+
     })
 }
 

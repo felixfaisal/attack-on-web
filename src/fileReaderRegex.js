@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { exit } = require('process')
 
 const fileReaderRegex = (fileName) => {
     let data = fs.readFileSync(fileName, 'utf8').toString().split('\n')
