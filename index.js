@@ -4,7 +4,7 @@ const extensionChecker = require('./src/extensionChecker');
 const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
 
-console.log('arr', arr)
+// console.log('arr', arr)
 
 function crawl(dir) {
     const files = fs.readdirSync(dir);
@@ -21,7 +21,7 @@ function crawl(dir) {
             else {
                 if (extensionChecker(next)) {
                     fileReaderRegex(next)
-                    console.log('\t', next);
+                    //console.log('\t', next);
                 }
 
             }
