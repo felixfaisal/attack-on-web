@@ -1,6 +1,6 @@
 // const { defaultCipherList } = require('constants');
 const fs = require('fs')
-
+// const check = 
 
 const extensionChecker = (fileName) => {
     let rawdata = fs.readFileSync('./src/extensions.json');
@@ -17,3 +17,4 @@ const extensionChecker = (fileName) => {
 }
 module.exports = extensionChecker;
 // export default extensionChecker;
+// alias 
