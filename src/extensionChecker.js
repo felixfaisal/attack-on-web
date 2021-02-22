@@ -5,13 +5,12 @@ const check = 'sk_live_4eC39HqLyjWDarjtT1zdp7dc'
 const extensionChecker = (fileName, ejson) => {
     let result = 0
     if (ejson) {
-        for (x in ejson.fileExtensions) {
+        for (x in ejson.extensions) {
             if (fileName.endsWith(ejson.fileExtensions[x])) {
                 result = 1;
                 break;
             }
         }
-
     }
     else {
         let rawdata = fs.readFileSync('./src/extensions.json');
