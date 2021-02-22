@@ -10,12 +10,38 @@ const arr = require('./src/check.js')
 // const spinner = ora('Loading Crawler \n').start();
 const clear = require('clear')
 const crawl = require('./src/crawl')
+const asciify = require('asciify-image');
+const Table = require('cli-table');
+const reg = require('./data/apiKeyRegex')
+const options = {
+    fit: 'box',
+    width: 60,
+    height: 40,
+
+}
+const table = new Table({
+    head: ['SUPPORTED API PROVIDERS'],
+    colWidths: [30, 30, 30]
+});
 
 clear()
+
+function listToMatrix(list, elementsPerSubArray) {
+    let matrix = [],
+        i, k;
+    for (i = 0, k = -1; i < list.length; i++) {
+        if (i % elementsPerSubArray === 0) {
+            k++;
+            matrix[k] = [];
+        }
+        matrix[k].push(list[i]);
+    }
+    return matrix;
+}
+
 function testCheck() {
     inquirer
-        .prompt([
-            {
+        .prompt([{
                 type: 'checkbox',
                 name: 'extensions',
                 choices: [
@@ -49,8 +75,6 @@ function testCheck() {
             },
         ])
         .then(answers => {
-            // answers.directories.length == 0 ? answers.directories.push("gitignore") : null;
-            //console.log(answers);
             crawl(__dirname, answers);
         })
 }
@@ -65,21 +89,34 @@ const argv = yargs
             describe: "Run the script to check for API access tokens",
             alias: 't'
 
-        }
+        },
     })
     .help()
     .alias("help", "h")
     .argv
 
-// console.log(argv.list);
 
 if (argv.test == true) {
     testCheck()
-    //crawl(__dirname)
-}
+}else if (argv.list) {
+    let apiProviders = [];
 
-if (argv.list) {
-    console.log('list')
+    reg.providers.forEach(element => {
+        apiProviders.push(element.provider)
+    });
+
+    let matrix = listToMatrix(apiProviders, 3);
+    for (let index = 0; index < matrix.length; index++) {
+        table.push(
+            matrix[index]
+        );
+    }
+    console.log(table.toString());
+}else{
+    asciify('./static/img/aow.png', options, function (err, asciified) {
+        if (err) throw err;
+        console.log(asciified);
+    })
 }
 
 // crawl(__dirname);
