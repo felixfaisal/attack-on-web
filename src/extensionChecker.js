@@ -2,16 +2,15 @@
 const fs = require('fs')
 const check = 'sk_live_4eC39HqLyjWDarjtT1zdp7dc'
 
-const extensionChecker = (fileName, ejson) => {
+const extensionChecker = (fileName, extensions) => {
     let result = 0
-    if (ejson) {
-        for (x in ejson.fileExtensions) {
-            if (fileName.endsWith(ejson.fileExtensions[x])) {
+    if (extensions.length > 0) {
+        for (x in extensions) {
+            if (fileName.endsWith(extensions[x])) {
                 result = 1;
                 break;
             }
         }
-
     }
     else {
         let rawdata = fs.readFileSync('./src/extensions.json');

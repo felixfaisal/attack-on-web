@@ -1,37 +1,76 @@
 const fs = require('fs');
 path = require('path');
-const extensionChecker = require('./src/extensionChecker');
-const fileReaderRegex = require('./src/fileReaderRegex')
+const inquirer = require('inquirer');
+const yargs = require('yargs');
+//const extensionChecker = require('./src/extensionChecker');
+//const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
-const ora = require('ora');
+// const ora = require('ora');
+// const testCheck = require('./src/yargs.js')
+// const spinner = ora('Loading Crawler \n').start();
+const clear = require('clear')
+const crawl = require('./src/crawl')
 
-const spinner = ora('Loading Crawler \n').start();
-// console.log('arr', arr)
-
-function crawl(dir) {
-    const files = fs.readdirSync(dir);
-    files.forEach(file => {
-        //console.log(file);
-        if (arr.find((item => file == item))) {
-            // console.log('ignore file')
-        }
-        else {
-            const next = path.join(dir, file)
-            if (fs.lstatSync(next).isDirectory() == true) {
-                crawl(next);
-            }
-
-            else {
-                if (extensionChecker(next)) {
-                    fileReaderRegex(next)
-                    spinner.succeed('Read file ' + next)
-                    //console.log('\t', next);
-                }
-
-            }
-        }
-
-    })
+clear()
+function testCheck() {
+    inquirer
+        .prompt([
+            {
+                type: 'checkbox',
+                name: 'extensions',
+                choices: [
+                    '.js',
+                    '.ts',
+                    '.json',
+                ],
+                default: 'none'
+            },
+            {
+                type: 'checkbox',
+                name: 'directories',
+                choices: [
+                    'node_modules',
+                    '/node_modules'
+                ],
+                // default: 'gitignore'
+            },
+            {
+                type: 'checkbox',
+                name: 'files',
+                choices: [
+                    'env.json',
+                ],
+                default: 'none'
+            },
+        ])
+        .then(answers => {
+            answers.directories.length == 0 ? answers.directories.push("gitignore") : null;
+            //console.log(answers);
+            crawl(__dirname, answers);
+        })
 }
 
-crawl(__dirname);
+const argv = yargs
+    .command('aow', 'attack-on-web', {
+        list: {
+            describe: "Lists all providers",
+            alias: 'l'
+        },
+        test: {
+            describe: "Run the script to check for API access tokens",
+            alias: 't'
+
+        }
+    })
+    .help()
+    .alias("help", "h")
+    .argv
+
+//console.log(argv);
+
+if (argv.test == true) {
+    testCheck()
+    //crawl(__dirname)
+}
+
+// crawl(__dirname);
