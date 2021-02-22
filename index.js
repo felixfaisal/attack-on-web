@@ -23,7 +23,10 @@ function testCheck() {
                     '.ts',
                     '.json',
                     '.py',
-                    '.'
+                    '.py3',
+                    '.html',
+                    '.txt',
+                    '.yml',
                 ],
                 default: 'none'
             },
