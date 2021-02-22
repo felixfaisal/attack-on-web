@@ -22,6 +22,8 @@ function testCheck() {
                     '.js',
                     '.ts',
                     '.json',
+                    '.py',
+                    '.'
                 ],
                 default: 'none'
             },
@@ -66,11 +68,16 @@ const argv = yargs
     .alias("help", "h")
     .argv
 
-//console.log(argv);
+// console.log(argv.list);
 
 if (argv.test == true) {
     testCheck()
     //crawl(__dirname)
+}
+
+if(argv.list)
+{
+    console.log('list')
 }
 
 // crawl(__dirname);
