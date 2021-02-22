@@ -45,8 +45,8 @@ function testCheck() {
         ])
         .then(answers => {
             answers.directories.length == 0 ? answers.directories.push("gitignore") : null;
-            console.log(answers);
-            crawl(__dirname);
+            //console.log(answers);
+            crawl(__dirname, answers);
         })
 }
 
@@ -66,7 +66,7 @@ const argv = yargs
     .alias("help", "h")
     .argv
 
-console.log(argv);
+//console.log(argv);
 
 if (argv.test == true) {
     testCheck()
