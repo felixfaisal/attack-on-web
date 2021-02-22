@@ -1,5 +1,5 @@
 {
-   "providers": [
+      "providers": [
       {
          "provider":"Artifactory API Token",
           "flags":"gi",

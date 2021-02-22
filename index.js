@@ -3,7 +3,9 @@ path = require('path');
 const extensionChecker = require('./src/extensionChecker');
 const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
+const ora = require('ora');
 
+const spinner = ora('Loading Crawler \n').start();
 // console.log('arr', arr)
 
 function crawl(dir) {
@@ -11,16 +13,18 @@ function crawl(dir) {
     files.forEach(file => {
         //console.log(file);
         if (arr.find((item => file == item))) {
-            console.log('ignore file')
+            // console.log('ignore file')
         }
         else {
             const next = path.join(dir, file)
             if (fs.lstatSync(next).isDirectory() == true) {
                 crawl(next);
             }
+
             else {
                 if (extensionChecker(next)) {
                     fileReaderRegex(next)
+                    spinner.succeed('Read file ' + next)
                     //console.log('\t', next);
                 }
 
