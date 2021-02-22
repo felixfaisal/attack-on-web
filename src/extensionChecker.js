@@ -4,25 +4,31 @@ const check = 'sk_live_4eC39HqLyjWDarjtT1zdp7dc'
 
 const extensionChecker = (fileName, extensions) => {
     let result = 0
-    if (extensions.length > 0) {
-        for (x in extensions) {
-            if (fileName.endsWith(extensions[x])) {
-                result = 1;
-                break;
+    try {
+        if (extensions.length) {
+            for (x in extensions) {
+                if (fileName.endsWith(extensions[x])) {
+                    result = 1;
+                    break;
+                }
             }
+        }
+
+        else {
+            let rawdata = fs.readFileSync('./src/extensions.json');
+            let exten = JSON.parse(rawdata);
+
+            for (x in exten.fileExtensions) {
+                if (fileName.endsWith(exten.fileExtensions[x])) {
+                    result = 1;
+                    break;
+                }
+            }
+
         }
     }
-    else {
-        let rawdata = fs.readFileSync('./src/extensions.json');
-        let exten = JSON.parse(rawdata);
-
-        for (x in exten.fileExtensions) {
-            if (fileName.endsWith(exten.fileExtensions[x])) {
-                result = 1;
-                break;
-            }
-        }
-
+    catch (err) {
+        console.log('continue')
     }
 
     return result

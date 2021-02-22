@@ -49,7 +49,7 @@ function testCheck() {
             },
         ])
         .then(answers => {
-            answers.directories.length == 0 ? answers.directories.push("gitignore") : null;
+            // answers.directories.length == 0 ? answers.directories.push("gitignore") : null;
             //console.log(answers);
             crawl(__dirname, answers);
         })
@@ -78,8 +78,7 @@ if (argv.test == true) {
     //crawl(__dirname)
 }
 
-if(argv.list)
-{
+if (argv.list) {
     console.log('list')
 }
 
