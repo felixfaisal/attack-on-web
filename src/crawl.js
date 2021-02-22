@@ -7,18 +7,16 @@ const ora = require('ora');
 // const testCheck = require('./src/yargs.js')
 
 const clear = require('clear')
-let arrt;
+let arr = require('./check.js')
 let extensions
+
 
 function crawl(dir, answers) {
     if (answers) {
-        arrt = [...answers.directories, ...answers.files];
         extensions = answers.extensions;
+        let arrt = [...answers.directories, ...answers.files, ...arr]
+        arr = arrt;
     }
-    else {
-        //arrt = require('./check.js')
-    }
-    const arr = arrt;
     const files = fs.readdirSync(dir);
     files.forEach(file => {
         //console.log(file);
@@ -32,9 +30,7 @@ function crawl(dir, answers) {
             }
 
             else {
-                // console.log(extensions + "This is working")
                 if (extensionChecker(next, extensions)) {
-                    // console.log(arr)
                     fileReaderRegex(next)
                     let spinner = ora('Read file' + next).succeed();
                     // spinner.succeed('Read file ' + next)
