@@ -1,82 +1,86 @@
 const fs = require('fs');
 path = require('path');
-const extensionChecker = require('./src/extensionChecker');
-const fileReaderRegex = require('./src/fileReaderRegex')
+const inquirer = require('inquirer');
+const yargs = require('yargs');
+//const extensionChecker = require('./src/extensionChecker');
+//const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
-const asciify = require('asciify-image');
-const Table = require('cli-table');
-const reg = require('./data/apiKeyRegex')
+// const ora = require('ora');
+// const testCheck = require('./src/yargs.js')
+// const spinner = ora('Loading Crawler \n').start();
+const clear = require('clear')
+const crawl = require('./src/crawl')
 
+clear()
+function testCheck() {
+    inquirer
+        .prompt([
+            {
+                type: 'checkbox',
+                name: 'extensions',
+                choices: [
+                    '.js',
+                    '.ts',
+                    '.json',
+                    '.py',
+                    '.py3',
+                    '.html',
+                    '.txt',
+                    '.yml',
+                ],
+                default: 'none'
+            },
+            {
+                type: 'checkbox',
+                name: 'directories',
+                choices: [
+                    'node_modules',
+                    '/node_modules'
+                ],
+                // default: 'gitignore'
+            },
+            {
+                type: 'checkbox',
+                name: 'files',
+                choices: [
+                    'env.json',
+                ],
+                default: 'none'
+            },
+        ])
+        .then(answers => {
+            answers.directories.length == 0 ? answers.directories.push("gitignore") : null;
+            //console.log(answers);
+            crawl(__dirname, answers);
+        })
+}
 
+const argv = yargs
+    .command('aow', 'attack-on-web', {
+        list: {
+            describe: "Lists all providers",
+            alias: 'l'
+        },
+        test: {
+            describe: "Run the script to check for API access tokens",
+            alias: 't'
 
-// console.log('arr', arr)
-
-function crawl(dir) {
-    const files = fs.readdirSync(dir);
-    files.forEach(file => {
-        //console.log(file);
-        if (arr.find((item => file == item))) {
-            console.log('ignore file')
-        } else {
-            const next = path.join(dir, file)
-            if (fs.lstatSync(next).isDirectory() == true) {
-                crawl(next);
-            } else {
-                if (extensionChecker(next)) {
-                    fileReaderRegex(next)
-                    //console.log('\t', next);
-                }
-
-            }
         }
-
     })
+    .help()
+    .alias("help", "h")
+    .argv
+
+// console.log(argv.list);
+
+if (argv.test == true) {
+    testCheck()
+    //crawl(__dirname)
 }
 
-const options = {
-    fit: 'box',
-    width: 80,
-    height: 80,
-
+if(argv.list)
+{
+    console.log('list')
 }
 
-const table = new Table({
-    head: ['SUPPORTED API PROVIDERS'],
-    colWidths: [30, 30, 30]
-});
-
-function listToMatrix(list, elementsPerSubArray) {
-    var matrix = [],
-        i, k;
-
-    for (i = 0, k = -1; i < list.length; i++) {
-        if (i % elementsPerSubArray === 0) {
-            k++;
-            matrix[k] = [];
-        }
-
-        matrix[k].push(list[i]);
-    }
-
-    return matrix;
-}
-
-asciify('aow.png', options, function (err, asciified) {
-    if (err) throw err;
-    let apiProviders = [];
-    reg.providers.forEach(element => {
-        apiProviders.push(element.provider)
-    });
-    var matrix = listToMatrix(apiProviders, 3);
-    for (let index = 0; index < matrix.length; index++) {
-        table.push(
-            matrix[index]
-        );
-
-    }
-
-    console.log(asciified);
-
-    console.log(table.toString());
-    crawl(__dirname);
-});
+// crawl(__dirname);

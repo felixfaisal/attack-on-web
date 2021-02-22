@@ -1,6 +1,10 @@
 const fs = require('fs')
 const { exit } = require('process')
 const reg = require('../data/apiKeyRegex')
+const ora = require('ora');
+const clc = require("cli-color");
+
+
 
 
 const fileReaderRegex = (fileName) => {
@@ -14,9 +18,9 @@ const fileReaderRegex = (fileName) => {
             //console.log(regex)
             if (regex.test(data[x]) == true) {
                 flag = 1;
-                // console.log(element.provider)
-                // console.log(fileName)
-                // console.log(x, data[x])
+                console.log()
+                const spinner = ora(clc.greenBright.bold(element.provider) + " found in " + fileName).fail();
+                console.log(clc.red.bold(x, data[x]))
                 return
             }
 

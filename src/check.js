@@ -4,11 +4,10 @@ const arr = fs.readFileSync('./\.gitignore').toString().split("\n")
 let val;
 // console.log('arr', arr)
 arr.map(item => {
-    if(item[0]=='/')
-    {
-       val = item.slice(1);
-       let index = arr.indexOf(item);
-       arr[index] = val
+    if (item[0] == '/') {
+        val = item.slice(1);
+        let index = arr.indexOf(item);
+        arr[index] = val
     }
 })
 
