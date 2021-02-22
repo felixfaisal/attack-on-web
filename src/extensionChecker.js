@@ -17,4 +17,3 @@ const extensionChecker = (fileName) => {
 }
 module.exports = extensionChecker;
 // export default extensionChecker;
-// alias 
