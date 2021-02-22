@@ -2,7 +2,6 @@ const yargs = require('yargs');
 //const argv = yargs.argv;
 const inquirer = require('inquirer');
 const clear = require('clear');
-const chalk = require('chalk');
 
 clear();
 
@@ -18,6 +17,11 @@ function testCheck() {
                 '.json',
             ],
             default: 'none'
+        },
+        {
+            name: 'moreExt',
+            message:'Include other Extensions.',
+            default: 'No!'
         },
         {
             type: 'checkbox',
@@ -39,6 +43,10 @@ function testCheck() {
     ])
     .then(answers => {
         answers.directories.length==0?answers.directories.push("gitignore"):null;
+        if(answers.moreExt != 'No!')
+        {
+            answers.extensions.push(answers.moreExt);
+        }
         console.log(answers);
     })
 }
