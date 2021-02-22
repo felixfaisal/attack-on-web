@@ -2,6 +2,7 @@ const fs = require('fs')
 const { exit } = require('process')
 const reg = require('../data/apiKeyRegex')
 
+
 const fileReaderRegex = (fileName) => {
     let data = fs.readFileSync(fileName, 'utf8').toString().split('\n')
     // console.log(data[0])
@@ -13,9 +14,9 @@ const fileReaderRegex = (fileName) => {
             //console.log(regex)
             if (regex.test(data[x]) == true) {
                 flag = 1;
-                console.log(element.provider)
-                console.log(fileName)
-                console.log(x, data[x])
+                // console.log(element.provider)
+                // console.log(fileName)
+                // console.log(x, data[x])
                 return
             }
 
