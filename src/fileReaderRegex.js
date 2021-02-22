@@ -18,7 +18,7 @@ const fileReaderRegex = (fileName) => {
             if (regex.test(data[x]) == true) {
                 flag = 1;
                 console.log()
-                const spinner = ora(element.provider + " found in " + fileName).fail();
+                const spinner = ora(clc.greenBright.bold(element.provider) + " found in " + fileName).fail();
                 console.log(clc.red.bold(x, data[x]))
                 return
             }
