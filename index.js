@@ -130,8 +130,13 @@ if (argv.test == true) {
 Hello, welcome to attack-on-web! AoW is a tool to test security vulnerabilities in your code.
 
 ${chalk.yellow('Tip:')} Type ${chalk.white('aow -h')} or ${chalk.white('aow --help')} to view list of commands
-     Type ${chalk.white('aow -t')} or ${chalk.white('aow --test')} for testing.`))
+     Type ${chalk.white('aow -t')} or ${chalk.white('aow --test')} for testing.
+     Type ${chalk.white('aow -l')} or ${chalk.white('aow --list')} for list of providers.`))
 
 }
 
+<<<<<<< HEAD
 // crawl(__dirname)
+=======
+// crawl(__dirname);
+>>>>>>> 2203381b4f217b814d58eb674865668bfd16be22

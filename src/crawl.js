@@ -11,7 +11,10 @@ function crawl(dir, answers) {
     if (answers) {
         extensions = answers.extensions;
         let arrt = [...answers.directories, ...answers.files, ...arr]
-        arr = arrt;
+        arr = arrt
+        arrt.forEach((item,index)=>{
+            arr[index] = item.replace('/',"").replace(/(#).*/g,"")
+            })
     }
     const files = fs.readdirSync(dir);
     files.forEach(file => {
