@@ -2,6 +2,7 @@ const fs = require('fs');
 path = require('path');
 const inquirer = require('inquirer');
 const yargs = require('yargs');
+const chalk = require('chalk');
 //const extensionChecker = require('./src/extensionChecker');
 //const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
@@ -10,7 +11,6 @@ const arr = require('./src/check.js')
 // const spinner = ora('Loading Crawler \n').start();
 const clear = require('clear')
 const crawl = require('./src/crawl')
-const asciify = require('asciify-image');
 const Table = require('cli-table');
 const reg = require('./data/apiKeyRegex')
 const options = {
@@ -113,10 +113,23 @@ if (argv.test == true) {
     }
     console.log(table.toString());
 }else{
-    asciify('./static/img/aow.png', options, function (err, asciified) {
-        if (err) throw err;
-        console.log(asciified);
-    })
+    
+        console.log(chalk.green(`
+        
+     
+                                                                    ]
+                                                                    ▒
+           ▄▄▄           ╓▄▄▄▄,       ▄▄▄   ╓▄▄   ╓▄▄          ─,   ▒[   ╓
+          █▓█▓█        ▄▓▓▀▀▀█▓█▄     ▐▓▓▌ ╔▓▓▓▌ ,▓▓▌            ╢╖╖▒▒╖╢╜
+         █▓█ █▓█       ▓▓▌    ▓▓▓      ▓▓▓▄▓█ █▓▄█▓▌     ,,╓╓╖╖╖╖@▒▒▒▒▒▒╖╖╖╖╖╓,,
+        █▓█▀▀▀█▓█      ▀▓▓█▄▄█▓▓▀       █▓▓█  ╙▓▓▓█              ]▒▒▒▒▒╢
+       "▀▀     ▀▀"       "▀▀▀▀"         '▀▀    "▀▀              ╖╜ ▒▒ ╙╢
+                                                                    ▒[
+                                                                    ║
+                                                                    ]
+                   
+       `));
+
 }
 
 // crawl(__dirname);
