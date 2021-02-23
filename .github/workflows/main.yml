@@ -10,6 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Code-Analyzer
-        uses: felixfaisal/attack-on-web-actions@v1.1
+        uses: felixfaisal/attack-on-web-actions@v1.2
         id: hello
       # Use the output from the `hello` step
