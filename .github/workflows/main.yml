@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Code Analyzer
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Code-Analyzer
+        uses: felixfaisal/attack-on-web-actions@v1.1
+        id: hello
+      # Use the output from the `hello` step
