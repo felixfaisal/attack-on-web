@@ -9,6 +9,9 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          repository: felixfaisal/attack-on-web
+          path: attack-on-web
       - name: Code-Analyzer
         uses: felixfaisal/attack-on-web-actions@v1.2
         id: hello
