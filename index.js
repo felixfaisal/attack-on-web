@@ -49,11 +49,9 @@ function testCheck() {
             },
         ])
         .then(answers => {
-            // answers.directories.length == 0 ? 
-            answers.directories.push("gitignore");
-            answers.directories.push('node_modules');
-            console.log('directores', answers.directories.length);
-            crawl(__dirname, answers, answers.directories.length);
+            // answers.directories.length == 0 ? answers.directories.push("gitignore") : null;
+            //console.log(answers);
+            crawl(__dirname, answers);
         })
 }
 
@@ -80,8 +78,7 @@ if (argv.test == true) {
     //crawl(__dirname)
 }
 
-if(argv.list)
-{
+if (argv.list) {
     console.log('list')
 }
 
