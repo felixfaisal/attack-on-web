@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const arr = fs.readFileSync('./\.gitignore').toString().split("\n")
+const arr = fs.readFileSync('./\.gitignore').toString().split("\r\n")
 let val;
 arr.map(item => {
     if (item[0] == '/') {
