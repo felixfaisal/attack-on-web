@@ -89,12 +89,11 @@ const argv = yargs
             describe: "Run the script to check for API access tokens",
             alias: 't'
 
-        },
+        }
     })
     .help()
     .alias("help", "h")
     .argv
-
 
 if (argv.test == true) {
     testCheck()
@@ -128,7 +127,9 @@ if (argv.test == true) {
                                                                     ║
                                                                     ]
                    
-       `));
+
+${chalk.yellow('Tip:')} Type ${chalk.white('aow -h')} or ${chalk.white('aow --help')} to view list of commands
+     Type ${chalk.white('aow -t')} or ${chalk.white('aow --test')} for testing.`))
 
 }
 
