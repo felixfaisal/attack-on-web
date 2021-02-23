@@ -29,5 +29,5 @@ function crawl(dir) {
 
     })
 }
-// alias
+
 crawl(__dirname);
