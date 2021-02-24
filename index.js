@@ -4,12 +4,7 @@ path = require('path');
 const inquirer = require('inquirer');
 const yargs = require('yargs');
 const chalk = require('chalk');
-//const extensionChecker = require('./src/extensionChecker');
-//const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
-// const ora = require('ora');
-// const testCheck = require('./src/yargs.js')
-// const spinner = ora('Loading Crawler \n').start();
 const clear = require('clear')
 const crawl = require('./src/crawl')
 const Table = require('cli-table');
@@ -136,4 +131,3 @@ ${chalk.yellow('Tip:')} Type ${chalk.white('aow -h')} or ${chalk.white('aow --he
 
 }
 
-// crawl(__dirname);
