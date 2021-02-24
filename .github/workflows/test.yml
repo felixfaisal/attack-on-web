@@ -17,15 +17,5 @@ jobs:
       run: npm install 
     - name: Testing the software
       run: npm test 
-  
-  code-analyzer:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: static code analyzer
-    - uses: felixfaisal/attack-on-web-actions@v1.7
-      with:
-        repo-name: 'attack-on-web'
     
     
