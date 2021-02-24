@@ -1,5 +1,5 @@
 {
-  "name": "attack-on-web",
+  "name": "aow",
   "version": "1.0.0",
   "description": "A tool to test security vulnerabilities in your code.",
   "main": "index.js",
