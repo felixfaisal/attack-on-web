@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2 
     - name: Run the analyzer 
-      uses: felixfaisal/attack-on-web-action@v1.7
+      uses: felixfaisal/attack-on-web-actions@v1.7
       with:
        repo-name: 'attack-on-web'
     
