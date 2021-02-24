@@ -135,8 +135,5 @@ ${chalk.yellow('Tip:')} Type ${chalk.white('aow -h')} or ${chalk.white('aow --he
 
 }
 
-<<<<<<< HEAD
-// crawl(__dirname)
-=======
+
 // crawl(__dirname);
->>>>>>> 2203381b4f217b814d58eb674865668bfd16be22
