@@ -75,7 +75,7 @@ function testCheck() {
 }
 
 const argv = yargs
-    .command('aow', 'attack-on-web', {
+    .command('api', 'attack-on-web', {
         list: {
             describe: "Lists all providers",
             alias: 'l'
@@ -124,9 +124,9 @@ if (argv.test == true) {
                    
 Hello, welcome to attack-on-web! AoW is a tool to test security vulnerabilities in your code.
 
-${chalk.yellow('Tip:')} Type ${chalk.white('aow -h')} or ${chalk.white('aow --help')} to view list of commands
-     Type ${chalk.white('aow -t')} or ${chalk.white('aow --test')} for testing.
-     Type ${chalk.white('aow -l')} or ${chalk.white('aow --list')} for list of providers.`))
+${chalk.yellow('Tip:')} Type ${chalk.white('npx atow api -h')} or ${chalk.white('npx atow api --help')} to view list of commands
+     Type ${chalk.white('npx atow api -t')} or ${chalk.white('npx atow api --test')} for testing.
+     Type ${chalk.white('npx atow api -l')} or ${chalk.white('npx atow api --list')} for list of providers.`))
 
 }
 
