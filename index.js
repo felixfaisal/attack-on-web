@@ -38,37 +38,36 @@ function listToMatrix(list, elementsPerSubArray) {
 function testCheck() {
     inquirer
         .prompt([{
-                type: 'checkbox',
-                name: 'extensions',
-                choices: [
-                    '.js',
-                    '.ts',
-                    '.json',
-                    '.py',
-                    '.py3',
-                    '.html',
-                    '.txt',
-                    '.yml',
-                ],
-                default: 'none'
-            },
-            {
-                type: 'checkbox',
-                name: 'directories',
-                choices: [
-                    'node_modules',
-                    '/node_modules'
-                ],
-                // default: 'gitignore'
-            },
-            {
-                type: 'checkbox',
-                name: 'files',
-                choices: [
-                    'env.json',
-                ],
-                default: 'none'
-            },
+            type: 'checkbox',
+            name: 'extensions',
+            choices: [
+                '.js',
+                '.ts',
+                '.json',
+                '.py',
+                '.py3',
+                '.html',
+                '.txt',
+                '.yml',
+            ],
+            default: 'none'
+        },
+        {
+            type: 'checkbox',
+            name: 'directories',
+            choices: [
+                'node_modules',
+                '/node_modules'
+            ],
+        },
+        {
+            type: 'checkbox',
+            name: 'files',
+            choices: [
+                'env.json',
+            ],
+            default: 'none'
+        },
         ])
         .then(answers => {
             crawl(__dirname, answers);
@@ -93,7 +92,7 @@ const argv = yargs
 
 if (argv.test == true) {
     testCheck()
-}else if (argv.list) {
+} else if (argv.list) {
     let apiProviders = [];
 
     reg.providers.forEach(element => {
@@ -107,9 +106,9 @@ if (argv.test == true) {
         );
     }
     console.log(table.toString());
-}else{
-    
-        console.log(chalk.green(`
+} else {
+
+    console.log(chalk.green(`
         
      
                                                                     ]
