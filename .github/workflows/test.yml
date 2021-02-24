@@ -1,0 +1,18 @@
+name: Testing 
+
+on:
+  push:
+    branches: [ Reader ]
+  pull_request:
+    branches: [ Reader ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install all dependencies 
+        run: npm install
+      - name: Test my project 
+        run: npm test 
