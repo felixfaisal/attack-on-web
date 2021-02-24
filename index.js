@@ -70,7 +70,7 @@ function testCheck() {
         },
         ])
         .then(answers => {
-            crawl(__dirname, answers);
+            crawl(process.cwd(), answers);
         })
 }
 

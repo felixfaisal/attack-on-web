@@ -6,11 +6,6 @@
          "pattern":"(?:\\s|=|:|\"|^)AKC[a-zA-Z0-9]{10,}"
       },
       {
-         "provider":"AWS Client ID",
-          "flags":"gi",
-         "pattern":"(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
-      },
-      {
          "provider":"Cloudinary Basic Auth",
           "flags":"gi",
          "pattern":"cloudinary:\/\/[0-9]{15}:[0-9A-Za-z]+@[a-z]+"
