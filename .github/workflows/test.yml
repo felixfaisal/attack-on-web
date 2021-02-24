@@ -20,9 +20,9 @@ jobs:
   analyzer:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v2
-    - name: analyzer
-      uses: felixfaisal/attack-on-web-actions@v1.7
-      with:
-        repo-name: 'attack-on-web'
+    steps:
+      - uses: actions/checkout@v2
+      - name: analyzer
+        uses: felixfaisal/attack-on-web-actions@v1.7
+        with:
+          repo-name: 'attack-on-web'
