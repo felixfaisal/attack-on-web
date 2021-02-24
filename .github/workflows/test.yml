@@ -17,5 +17,16 @@ jobs:
       run: npm install 
     - name: Testing the software
       run: npm test 
+  
+  code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2 
+    - name: Run the analyzer 
+      uses: felixfaisal/attack-on-web-action@v1.7
+      with:
+       repo-name: 'attack-on-web'
+    
     
     
