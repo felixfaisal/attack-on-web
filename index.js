@@ -1,14 +1,10 @@
+#!/usr/bin/env node
 const fs = require('fs');
 path = require('path');
 const inquirer = require('inquirer');
 const yargs = require('yargs');
 const chalk = require('chalk');
-//const extensionChecker = require('./src/extensionChecker');
-//const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
-// const ora = require('ora');
-// const testCheck = require('./src/yargs.js')
-// const spinner = ora('Loading Crawler \n').start();
 const clear = require('clear')
 const crawl = require('./src/crawl')
 const Table = require('cli-table');
@@ -63,7 +59,6 @@ function testCheck() {
                 'node_modules',
                 '/node_modules'
             ],
-            // default: 'gitignore'
         },
         {
             type: 'checkbox',
@@ -135,8 +130,3 @@ ${chalk.yellow('Tip:')} Type ${chalk.white('aow -h')} or ${chalk.white('aow --he
 
 }
 
-<<<<<<< HEAD
-// crawl(__dirname)
-=======
-// crawl(__dirname);
->>>>>>> 2203381b4f217b814d58eb674865668bfd16be22

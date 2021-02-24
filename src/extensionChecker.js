@@ -1,6 +1,5 @@
-// const { defaultCipherList } = require('constants');
+
 const fs = require('fs')
-const check = 'sk_live_4eC39HqLyjWDarjtT1zdp7dc'
 
 const extensionChecker = (fileName, extensions) => {
     let result = 0
@@ -35,4 +34,3 @@ const extensionChecker = (fileName, extensions) => {
 
 }
 module.exports = extensionChecker;
-// export default extensionChecker;
