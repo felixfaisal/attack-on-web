@@ -1,0 +1,135 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Grotesk;
+
+}
+
+body {
+  background-color: black;
+}
+
+#aow-content {}
+
+@font-face {
+  font-family: Grotesk;
+  src: url(./static/med-25.otf);
+}
+
+.aow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+
+.aow-tagline {
+  color: #E0FFFF;
+  font-family: Grotesk;
+}
+
+.aow-img {
+  clip-path: inset(0 3px);
+}
+
+.buttons {
+  display: flex;
+  margin-top: 32px;
+  width: 40%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.github {
+  border: 3px solid #0c7c00;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  margin: 8px 0px;
+  background: #063c00;
+  cursor: pointer;
+}
+
+.github img {
+  width: 6vmin;
+  margin-right: 16px;
+}
+
+.button-text {
+  color: white;
+  text-decoration: none;
+}
+
+.clipboard {
+  background: #063C00;
+  border-radius: 8px;
+  display: flex;
+  padding: 16px 24px;
+  align-items: center;
+  justify-content: space-between;
+  width: 32%;
+  margin-top: 32px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+  cursor: pointer;
+}
+
+.clip-icon {
+  width: 4vmin;
+}
+
+.clip-text {
+  color: #FFFFFF;
+  word-spacing: 8px;
+  /* font-stretch: expanded; */
+}
+
+@media (min-width: 1024px) {
+
+  img {
+    width: 48vw;
+  }
+
+  .aow-tagline {
+    font-size: calc(1vmin + 12px);
+  }
+
+
+}
+
+
+@media (max-width: 768px) {
+  img {
+    width: 80vw;
+  }
+
+  .aow-tagline {
+    font-size: calc(1vmin + 6px);
+  }
+
+  .buttons {
+    width: 88%;
+  }
+
+  .clipboard {
+    width: 72%;
+
+  }
+
+}
