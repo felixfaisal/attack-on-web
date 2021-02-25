@@ -1,5 +1,3 @@
-![Made With JavaScript](https://img.shields.io/badge/Made_With-JavaScript-yellow?style=for-the-badge&logo=JavaScript)
-![Made For Web](https://img.shields.io/badge/Made_For-Web-blue?style=for-the-badge&logo=web)
 
 # Attack-on-Web(AoW)
 Tool to test for security vulnerabilities within the code.
