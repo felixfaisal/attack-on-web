@@ -55,11 +55,28 @@ If a secret or other issue is found in your staged code or in your CI, you will 
  
  ## Test using Github Actions
  
+### Input
+
+### `repo-name`
+The name of the repository where you are calling this actions 
+
+**Required** This input is required for the action to run
+
+### Example usage
+
+```
+uses: felixfaisal/attack-on-web-actions@v2.0
+with:
+  repo-name: 'my-repo'
+```
+
+ 
  
  ## Contributing
 
 To contribute, please find the contribution guidelines here - [Contribution Guidelines](https://github.com/felixfaisal/attack-on-web/blob/main/CONTRIBUTING.md)
 
 
-
+## License 
+MIT 
 
