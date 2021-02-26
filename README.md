@@ -32,7 +32,7 @@ Tool that detects vulnerable API keys within your code repository.
  
  ## Contributing
 
-To contribute, please find the contribution guidelines here - 
+To contribute, please find the contribution guidelines here - [Contribution Guidelines](https://github.com/felixfaisal/attack-on-web/blob/main/CONTRIBUTING.md)
 
 
 
