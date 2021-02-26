@@ -61,8 +61,8 @@ This is a good time, to open a pull request in this repository with the changes 
 
 - Make sure there is an issue reported, related to the work that you are doing.
 - To prevent any duplication, comment under the issue.
-- Push your commits and refer to the issue using fix #<issue-no> or close #<issue-no> in the commit message
-- Please don't make untested PRs
+- Push your commits and refer to the issue using fix `#<issue-no>` or close `#<issue-no>` in the commit message.
+- Please don't make untested PRs.
 
 **Commit Messages:**
 
