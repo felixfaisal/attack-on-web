@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Attack on Web
 
 # Controls when the action will run. 
 on:
@@ -24,11 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Install dependencies 
-        run: npm install 
       - name: Run the code analyzer
-        run: npm test
-
-      # Runs a set of commands using the runners shell
+        uses: felixfaisal/attack-on-web-actions@v1.8
+        with:
+          repo-name: 'attack-on-web'
+      #sfsf
+        
+  

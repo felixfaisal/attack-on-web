@@ -1,14 +1,10 @@
+#!/usr/bin/env node
 const fs = require('fs');
 path = require('path');
 const inquirer = require('inquirer');
 const yargs = require('yargs');
 const chalk = require('chalk');
-//const extensionChecker = require('./src/extensionChecker');
-//const fileReaderRegex = require('./src/fileReaderRegex')
 const arr = require('./src/check.js')
-// const ora = require('ora');
-// const testCheck = require('./src/yargs.js')
-// const spinner = ora('Loading Crawler \n').start();
 const clear = require('clear')
 const crawl = require('./src/crawl')
 const Table = require('cli-table');
@@ -42,45 +38,44 @@ function listToMatrix(list, elementsPerSubArray) {
 function testCheck() {
     inquirer
         .prompt([{
-                type: 'checkbox',
-                name: 'extensions',
-                choices: [
-                    '.js',
-                    '.ts',
-                    '.json',
-                    '.py',
-                    '.py3',
-                    '.html',
-                    '.txt',
-                    '.yml',
-                ],
-                default: 'none'
-            },
-            {
-                type: 'checkbox',
-                name: 'directories',
-                choices: [
-                    'node_modules',
-                    '/node_modules'
-                ],
-                // default: 'gitignore'
-            },
-            {
-                type: 'checkbox',
-                name: 'files',
-                choices: [
-                    'env.json',
-                ],
-                default: 'none'
-            },
+            type: 'checkbox',
+            name: 'extensions',
+            choices: [
+                '.js',
+                '.ts',
+                '.json',
+                '.py',
+                '.py3',
+                '.html',
+                '.txt',
+                '.yml',
+            ],
+            default: 'none'
+        },
+        {
+            type: 'checkbox',
+            name: 'directories',
+            choices: [
+                'node_modules',
+                '/node_modules'
+            ],
+        },
+        {
+            type: 'checkbox',
+            name: 'files',
+            choices: [
+                'env.json',
+            ],
+            default: 'none'
+        },
         ])
         .then(answers => {
-            crawl(__dirname, answers);
+            crawl(process.cwd(), answers);
         })
 }
 
 const argv = yargs
-    .command('aow', 'attack-on-web', {
+    .command('api', 'attack-on-web', {
         list: {
             describe: "Lists all providers",
             alias: 'l'
@@ -97,7 +92,7 @@ const argv = yargs
 
 if (argv.test == true) {
     testCheck()
-}else if (argv.list) {
+} else if (argv.list) {
     let apiProviders = [];
 
     reg.providers.forEach(element => {
@@ -111,9 +106,9 @@ if (argv.test == true) {
         );
     }
     console.log(table.toString());
-}else{
-    
-        console.log(chalk.green(`
+} else {
+
+    console.log(chalk.green(`
         
      
                                                                     ]
@@ -129,10 +124,9 @@ if (argv.test == true) {
                    
 Hello, welcome to attack-on-web! AoW is a tool to test security vulnerabilities in your code.
 
-${chalk.yellow('Tip:')} Type ${chalk.white('aow -h')} or ${chalk.white('aow --help')} to view list of commands
-     Type ${chalk.white('aow -t')} or ${chalk.white('aow --test')} for testing.
-     Type ${chalk.white('aow -l')} or ${chalk.white('aow --list')} for list of providers.`))
+${chalk.yellow('Tip:')} Type ${chalk.white('npx atow api -h')} or ${chalk.white('npx atow api --help')} to view list of commands
+     Type ${chalk.white('npx atow api -t')} or ${chalk.white('npx atow api --test')} for testing.
+     Type ${chalk.white('npx atow api -l')} or ${chalk.white('npx atow api --list')} for list of providers.`))
 
 }
 
-// crawl(__dirname);
