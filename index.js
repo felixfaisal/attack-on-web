@@ -19,7 +19,7 @@ const table = new Table({
     head: ['SUPPORTED API PROVIDERS'],
     colWidths: [30, 30, 30]
 });
-
+const check = 'sk_live_4eC39HqLyjWDarjtT1zdp7dc'
 clear()
 
 function listToMatrix(list, elementsPerSubArray) {
