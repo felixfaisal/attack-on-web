@@ -37,8 +37,20 @@ Options:
     -t or  --test       for testing.
     -l or  --list       for list of providers.
   ```
+### OUTPUT
+If no secrets or policy breaks have been found, the exit code will be 0:
 
-   [![asciicast](https://asciinema.org/a/j1mkJjCAAlDLFo51nBihTo29J.svg)](https://asciinema.org/a/j1mkJjCAAlDLFo51nBihTo29J?t=30)
+If a secret or other issue is found in your staged code or in your CI, you will have an alert giving you the type of policy break, the filename where the policy break has been found and a patch giving you the position of the policy break in the file:
+
+```
+✔ Read fileD:\MLH\dev-tools\attack-on-web\node_modules\yargs-parser\build\lib\yargs-parser.js
+✔ Read fileD:\MLH\dev-tools\attack-on-web\src\check.js
+✔ Read fileD:\MLH\dev-tools\attack-on-web\src\checkGitignoreRegex.js
+✔ Read fileD:\MLH\dev-tools\attack-on-web\src\crawl.js
+✖ Stripe API Key found in D:\MLH\dev-tools\attack-on-web\src\extensionChecker.js
+2 const check = 'sk_live_4eC39HqLyjWDarjtT1zdp7dc'
+```
+![asciicast](https://github.com/felixfaisal/attack-on-web/blob/main/Peek%202021-02-26%2017-05.gif)
  
  
  ## Test using Github Actions
