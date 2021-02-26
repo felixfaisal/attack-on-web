@@ -1,6 +1,6 @@
 
 # Attack-on-Web(AoW)
-Tool to test for security vulnerabilities within the code.
+Tool that detects vulnerable API keys within your code repository.
 
  - [Test using CLI](#test-using-cli)
  - [Test using GitHub Actions](#test-using-github-actions)
@@ -18,7 +18,11 @@ Tool to test for security vulnerabilities within the code.
  
  
  ## Test using Github Actions
+ 
+ 
+ ## Contributing
 
+To contribute, please find the contribution guidelines here - 
 
 
 
