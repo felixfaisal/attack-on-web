@@ -1,6 +1,13 @@
 
 # Attack-on-Web(AoW)
+![build status](https://img.shields.io/github/workflow/status/felixfaisal/attack-on-web/Attack%20on%20Web?style=plastic)
+![code size](https://img.shields.io/github/languages/code-size/felixfaisal/attack-on-web?style=plastic)
+![issues](https://img.shields.io/github/issues-raw/felixfaisal/attack-on-web?color=red&style=plastic)
+![pullrequest](https://img.shields.io/github/issues-pr-closed/felixfaisal/attack-on-web?color=purple&style=plastic)
+![stars](https://img.shields.io/github/stars/felixfaisal/attack-on-web?style=plastic)
+
 Tool that detects vulnerable API keys within your code repository.
+
 
  - [Test using CLI](#test-using-cli)
  - [Test using GitHub Actions](#test-using-github-actions)
