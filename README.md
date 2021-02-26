@@ -42,7 +42,7 @@ If no secrets or policy breaks have been found, the exit code will be 0:
 
 If a secret or other issue is found in your staged code or in your CI, you will have an alert giving you the type of policy break, the filename where the policy break has been found and a patch giving you the position of the policy break in the file:
 
-```
+```js
 ✔ Read fileD:\MLH\dev-tools\attack-on-web\node_modules\yargs-parser\build\lib\yargs-parser.js
 ✔ Read fileD:\MLH\dev-tools\attack-on-web\src\check.js
 ✔ Read fileD:\MLH\dev-tools\attack-on-web\src\checkGitignoreRegex.js
