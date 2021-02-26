@@ -11,6 +11,8 @@ Tool that detects vulnerable API keys within your code repository.
 
  - [Test using CLI](#test-using-cli)
  - [Test using GitHub Actions](#test-using-github-actions)
+ 
+
 
 
 ## Test using CLI
@@ -22,6 +24,7 @@ Tool that detects vulnerable API keys within your code repository.
   
    [npx](https://nodejs.dev/learn/the-npx-nodejs-package-runner) is a package runner tool that comes with npm 5.2+ and higher.
    
+   [![asciicast](https://asciinema.org/a/j1mkJjCAAlDLFo51nBihTo29J.svg)](https://asciinema.org/a/j1mkJjCAAlDLFo51nBihTo29J?t=5)
  
  
  ## Test using Github Actions
