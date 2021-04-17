@@ -110,6 +110,36 @@
          "provider":"Twitter Oauth",
           "flags":"gi",
          "pattern":"[t|T][w|W][i|I][t|T][t|T][e|E][r|R].{0,30}['\"\\s][0-9a-zA-Z]{35,44}['\"\\s]"
+      },
+      {
+         "provider":"Discord Webhook",
+          "flags":"gi",
+         "pattern":"https:\/\/.+\/api\/webhooks\/(.+)\/(.+)"
+      },
+      {
+         "provider":"Discord Access Token",
+          "flags":"gi",
+         "pattern":"[MN][A-Za-z\\d]{23}\\.[\\w-]{6}\\.[\\w-]{27}"
+      },
+      {
+         "provider":"Github Oauth",
+          "flags":"gi",
+         "pattern":"[A-Za-z0-9_]{40}"
+      },
+      {
+         "provider":"AWS Access Key ID",
+          "flags":"gi",
+         "pattern":"AKIA[0-9A-Z]{16}"
+      },
+      {
+         "provider":"AWS Secret Key",
+          "flags":"gi",
+         "pattern":"[0-9a-zA-Z\/+]{40}"
+      },
+      {
+         "provider":"JSON web token",
+          "flags":"gi",
+         "pattern":"([a-zA-Z0-9\\-_\\.]+)(\/[a-zA-Z0-9\\-_\\.]+)(\/[a-zA-Z0-9\\-_]*)*$"
       }
    ]
  }
