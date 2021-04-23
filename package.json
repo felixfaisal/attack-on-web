@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    
+    "eslint": "^7.24.0"
   },
   "dependencies": {
     "cli-table": "^0.3.5",
