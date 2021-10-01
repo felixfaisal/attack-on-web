@@ -5,7 +5,7 @@ const extensionChecker = (fileName, extensions) => {
     let result = 0
     try {
         if (extensions.length) {
-            for (x in extensions) {
+            for (const x in extensions) {
                 if (fileName.endsWith(extensions[x])) {
                     result = 1;
                     break;
@@ -17,7 +17,7 @@ const extensionChecker = (fileName, extensions) => {
             let rawdata = fs.readFileSync('./src/extensions.json');
             let exten = JSON.parse(rawdata);
 
-            for (x in exten.fileExtensions) {
+            for (const x in exten.fileExtensions) {
                 if (fileName.endsWith(exten.fileExtensions[x])) {
                     result = 1;
                     break;
