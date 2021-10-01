@@ -5,7 +5,9 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "lint": "eslint --ext .js index.js src/",
+    "lint:fix": "eslint --ext .js index.js src/ --fix"
   },
   "keywords": [],
   "author": "",
