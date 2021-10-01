@@ -7,12 +7,12 @@ const clc = require("cli-color");
 const fileReaderRegex = (fileName) => {
     let data = fs.readFileSync(fileName, 'utf8').toString().split('\n')
     let flag = 0;
-    for (x in data) {
+    for (const x in data) {
         reg.providers.forEach(element => {
             let regex = new RegExp(element.pattern, element.flags);
             if (regex.test(data[x]) == true) {
                 flag = 1;
-                const spinner = ora(clc.greenBright.bold(element.provider) + " found in " + fileName).fail();
+                ora(clc.greenBright.bold(element.provider) + " found in " + fileName).fail();
                 console.log(clc.red.bold(x, data[x]))
                 return
             }

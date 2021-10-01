@@ -1,20 +1,13 @@
 #!/usr/bin/env node
-const fs = require('fs');
-path = require('path');
 const inquirer = require('inquirer');
 const yargs = require('yargs');
 const chalk = require('chalk');
-const arr = require('./src/check.js')
+require('./src/check.js')
 const clear = require('clear')
 const crawl = require('./src/crawl')
 const Table = require('cli-table');
 const reg = require('./data/apiKeyRegex')
-const options = {
-    fit: 'box',
-    width: 60,
-    height: 40,
 
-}
 const table = new Table({
     head: ['SUPPORTED API PROVIDERS'],
     colWidths: [30, 30, 30]
